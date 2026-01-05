@@ -1,0 +1,7 @@
+{
+  "categories": [
+    { "id": "games", "name": "Игры" },
+    { "id": "tools", "name": "Инструменты" },
+    { "id": "apps", "name": "Повседневные" }
+  ]
+}

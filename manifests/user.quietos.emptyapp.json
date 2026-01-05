@@ -1,0 +1,13 @@
+{
+  "package": "user.quietos.emptyapp",
+  "name": "EmptyApp",
+  "author": "QuietOS-dev",
+  "version": "1.0.0",
+  "category": "tools",
+  "description": "Empty app for QuietOS store. Used for testing.",
+  "url": "https://raw.githubusercontent.com/.../snake.luac",
+  "sha256": "9f3c...e12a",
+  "api_level": 1,
+  "permissions": ["uart"],
+  "min_os_version": "0.1"
+}
