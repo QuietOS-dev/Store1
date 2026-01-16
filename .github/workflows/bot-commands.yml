@@ -1,7 +1,7 @@
 name: Manifest Bot
 
 on:
-  pull_request:
+  pull_request_target:
     types: [opened, synchronize]
   issue_comment:
     types: [created]
@@ -14,18 +14,23 @@ permissions:
 jobs:
   manifest:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout base repository
+        uses: actions/checkout@v4
+        with:
+          ref: main
 
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: '3.11'
 
       - name: Install requirements
-        run: pip install PyGithub requests pillow
+        run: |
+          pip install --no-cache-dir PyGithub requests pillow
 
-      - name: Run bot handler
+      - name: Run manifest bot
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_REPOSITORY: ${{ github.repository }}
